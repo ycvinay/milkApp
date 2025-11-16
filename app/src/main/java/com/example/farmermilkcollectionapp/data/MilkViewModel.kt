@@ -1,4 +1,4 @@
-package com.example.farmermilkcollectionapp.ui
+package com.example.farmermilkcollectionapp.data
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
