@@ -1,0 +1,1267 @@
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideDatabaseFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideDatabaseFactory.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideDatabaseFactory.java
+new file mode 100644
+--- /dev/null	(date 1762136962764)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideDatabaseFactory.java	(date 1762136962764)
+@@ -0,0 +1,47 @@
++package com.example.farmermilkcollectionapp.di;
++
++import android.content.Context;
++import com.example.farmermilkcollectionapp.data.AppDatabase;
++import dagger.internal.DaggerGenerated;
++import dagger.internal.Factory;
++import dagger.internal.Preconditions;
++import dagger.internal.QualifierMetadata;
++import dagger.internal.ScopeMetadata;
++import javax.annotation.processing.Generated;
++import javax.inject.Provider;
++
++@ScopeMetadata("javax.inject.Singleton")
++@QualifierMetadata("dagger.hilt.android.qualifiers.ApplicationContext")
++@DaggerGenerated
++@Generated(
++    value = "dagger.internal.codegen.ComponentProcessor",
++    comments = "https://dagger.dev"
++)
++@SuppressWarnings({
++    "unchecked",
++    "rawtypes",
++    "KotlinInternal",
++    "KotlinInternalInJava",
++    "cast",
++    "deprecation"
++})
++public final class DatabaseModule_ProvideDatabaseFactory implements Factory<AppDatabase> {
++  private final Provider<Context> contextProvider;
++
++  public DatabaseModule_ProvideDatabaseFactory(Provider<Context> contextProvider) {
++    this.contextProvider = contextProvider;
++  }
++
++  @Override
++  public AppDatabase get() {
++    return provideDatabase(contextProvider.get());
++  }
++
++  public static DatabaseModule_ProvideDatabaseFactory create(Provider<Context> contextProvider) {
++    return new DatabaseModule_ProvideDatabaseFactory(contextProvider);
++  }
++
++  public static AppDatabase provideDatabase(Context context) {
++    return Preconditions.checkNotNullFromProvides(DatabaseModule.INSTANCE.provideDatabase(context));
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideMilkCollectionDaoFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideMilkCollectionDaoFactory.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideMilkCollectionDaoFactory.java
+new file mode 100644
+--- /dev/null	(date 1762136962795)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/di/DatabaseModule_ProvideMilkCollectionDaoFactory.java	(date 1762136962795)
+@@ -0,0 +1,48 @@
++package com.example.farmermilkcollectionapp.di;
++
++import com.example.farmermilkcollectionapp.data.AppDatabase;
++import com.example.farmermilkcollectionapp.data.MilkCollectionDao;
++import dagger.internal.DaggerGenerated;
++import dagger.internal.Factory;
++import dagger.internal.Preconditions;
++import dagger.internal.QualifierMetadata;
++import dagger.internal.ScopeMetadata;
++import javax.annotation.processing.Generated;
++import javax.inject.Provider;
++
++@ScopeMetadata
++@QualifierMetadata
++@DaggerGenerated
++@Generated(
++    value = "dagger.internal.codegen.ComponentProcessor",
++    comments = "https://dagger.dev"
++)
++@SuppressWarnings({
++    "unchecked",
++    "rawtypes",
++    "KotlinInternal",
++    "KotlinInternalInJava",
++    "cast",
++    "deprecation"
++})
++public final class DatabaseModule_ProvideMilkCollectionDaoFactory implements Factory<MilkCollectionDao> {
++  private final Provider<AppDatabase> dbProvider;
++
++  public DatabaseModule_ProvideMilkCollectionDaoFactory(Provider<AppDatabase> dbProvider) {
++    this.dbProvider = dbProvider;
++  }
++
++  @Override
++  public MilkCollectionDao get() {
++    return provideMilkCollectionDao(dbProvider.get());
++  }
++
++  public static DatabaseModule_ProvideMilkCollectionDaoFactory create(
++      Provider<AppDatabase> dbProvider) {
++    return new DatabaseModule_ProvideMilkCollectionDaoFactory(dbProvider);
++  }
++
++  public static MilkCollectionDao provideMilkCollectionDao(AppDatabase db) {
++    return Preconditions.checkNotNullFromProvides(DatabaseModule.INSTANCE.provideMilkCollectionDao(db));
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_Factory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_Factory.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_Factory.java
+new file mode 100644
+--- /dev/null	(date 1762136962839)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_Factory.java	(date 1762136962839)
+@@ -0,0 +1,45 @@
++package com.example.farmermilkcollectionapp.ui;
++
++import com.example.farmermilkcollectionapp.data.MilkRepository;
++import dagger.internal.DaggerGenerated;
++import dagger.internal.Factory;
++import dagger.internal.QualifierMetadata;
++import dagger.internal.ScopeMetadata;
++import javax.annotation.processing.Generated;
++import javax.inject.Provider;
++
++@ScopeMetadata
++@QualifierMetadata
++@DaggerGenerated
++@Generated(
++    value = "dagger.internal.codegen.ComponentProcessor",
++    comments = "https://dagger.dev"
++)
++@SuppressWarnings({
++    "unchecked",
++    "rawtypes",
++    "KotlinInternal",
++    "KotlinInternalInJava",
++    "cast",
++    "deprecation"
++})
++public final class MilkViewModel_Factory implements Factory<MilkViewModel> {
++  private final Provider<MilkRepository> milkRepositoryProvider;
++
++  public MilkViewModel_Factory(Provider<MilkRepository> milkRepositoryProvider) {
++    this.milkRepositoryProvider = milkRepositoryProvider;
++  }
++
++  @Override
++  public MilkViewModel get() {
++    return newInstance(milkRepositoryProvider.get());
++  }
++
++  public static MilkViewModel_Factory create(Provider<MilkRepository> milkRepositoryProvider) {
++    return new MilkViewModel_Factory(milkRepositoryProvider);
++  }
++
++  public static MilkViewModel newInstance(MilkRepository milkRepository) {
++    return new MilkViewModel(milkRepository);
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules.java
+new file mode 100644
+--- /dev/null	(date 1762136962270)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules.java	(date 1762136962270)
+@@ -0,0 +1,51 @@
++package com.example.farmermilkcollectionapp.ui;
++
++import androidx.lifecycle.ViewModel;
++import dagger.Binds;
++import dagger.Module;
++import dagger.Provides;
++import dagger.hilt.InstallIn;
++import dagger.hilt.android.components.ActivityRetainedComponent;
++import dagger.hilt.android.components.ViewModelComponent;
++import dagger.hilt.android.internal.lifecycle.HiltViewModelMap;
++import dagger.hilt.codegen.OriginatingElement;
++import dagger.multibindings.IntoMap;
++import dagger.multibindings.LazyClassKey;
++import javax.annotation.processing.Generated;
++
++@Generated("dagger.hilt.android.processor.internal.viewmodel.ViewModelProcessor")
++@OriginatingElement(
++    topLevelClass = MilkViewModel.class
++)
++public final class MilkViewModel_HiltModules {
++  private MilkViewModel_HiltModules() {
++  }
++
++  @Module
++  @InstallIn(ViewModelComponent.class)
++  public abstract static class BindsModule {
++    private BindsModule() {
++    }
++
++    @Binds
++    @IntoMap
++    @LazyClassKey(MilkViewModel.class)
++    @HiltViewModelMap
++    public abstract ViewModel binds(MilkViewModel vm);
++  }
++
++  @Module
++  @InstallIn(ActivityRetainedComponent.class)
++  public static final class KeyModule {
++    private KeyModule() {
++    }
++
++    @Provides
++    @IntoMap
++    @LazyClassKey(MilkViewModel.class)
++    @HiltViewModelMap.KeySet
++    public static boolean provide() {
++      return true;
++    }
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules_KeyModule_ProvideFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules_KeyModule_ProvideFactory.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules_KeyModule_ProvideFactory.java
+new file mode 100644
+--- /dev/null	(date 1762136962974)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/ui/MilkViewModel_HiltModules_KeyModule_ProvideFactory.java	(date 1762136962974)
+@@ -0,0 +1,41 @@
++package com.example.farmermilkcollectionapp.ui;
++
++import dagger.internal.DaggerGenerated;
++import dagger.internal.Factory;
++import dagger.internal.QualifierMetadata;
++import dagger.internal.ScopeMetadata;
++import javax.annotation.processing.Generated;
++
++@ScopeMetadata
++@QualifierMetadata("dagger.hilt.android.internal.lifecycle.HiltViewModelMap.KeySet")
++@DaggerGenerated
++@Generated(
++    value = "dagger.internal.codegen.ComponentProcessor",
++    comments = "https://dagger.dev"
++)
++@SuppressWarnings({
++    "unchecked",
++    "rawtypes",
++    "KotlinInternal",
++    "KotlinInternalInJava",
++    "cast",
++    "deprecation"
++})
++public final class MilkViewModel_HiltModules_KeyModule_ProvideFactory implements Factory<Boolean> {
++  @Override
++  public Boolean get() {
++    return provide();
++  }
++
++  public static MilkViewModel_HiltModules_KeyModule_ProvideFactory create() {
++    return InstanceHolder.INSTANCE;
++  }
++
++  public static boolean provide() {
++    return MilkViewModel_HiltModules.KeyModule.provide();
++  }
++
++  private static final class InstanceHolder {
++    private static final MilkViewModel_HiltModules_KeyModule_ProvideFactory INSTANCE = new MilkViewModel_HiltModules_KeyModule_ProvideFactory();
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/AppDatabase_Impl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/AppDatabase_Impl.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/AppDatabase_Impl.java
+new file mode 100644
+--- /dev/null	(date 1762136962111)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/AppDatabase_Impl.java	(date 1762136962111)
+@@ -0,0 +1,176 @@
++package com.example.farmermilkcollectionapp.data;
++
++import androidx.annotation.NonNull;
++import androidx.room.DatabaseConfiguration;
++import androidx.room.InvalidationTracker;
++import androidx.room.RoomDatabase;
++import androidx.room.RoomOpenHelper;
++import androidx.room.migration.AutoMigrationSpec;
++import androidx.room.migration.Migration;
++import androidx.room.util.DBUtil;
++import androidx.room.util.TableInfo;
++import androidx.sqlite.db.SupportSQLiteDatabase;
++import androidx.sqlite.db.SupportSQLiteOpenHelper;
++import java.lang.Class;
++import java.lang.Override;
++import java.lang.String;
++import java.lang.SuppressWarnings;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++import javax.annotation.processing.Generated;
++
++@Generated("androidx.room.RoomProcessor")
++@SuppressWarnings({"unchecked", "deprecation"})
++public final class AppDatabase_Impl extends AppDatabase {
++  private volatile MilkCollectionDao _milkCollectionDao;
++
++  @Override
++  @NonNull
++  protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
++    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
++      @Override
++      public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
++        db.execSQL("CREATE TABLE IF NOT EXISTS `milk_collection` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` INTEGER NOT NULL, `session` TEXT NOT NULL, `quantityLitres` REAL NOT NULL, `fatPercentage` REAL NOT NULL, `pricePerLitre` REAL NOT NULL, `paymentStatus` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL)");
++        db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
++        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9c72478f12cda3eadb4e943acd618c22')");
++      }
++
++      @Override
++      public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
++        db.execSQL("DROP TABLE IF EXISTS `milk_collection`");
++        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
++        if (_callbacks != null) {
++          for (RoomDatabase.Callback _callback : _callbacks) {
++            _callback.onDestructiveMigration(db);
++          }
++        }
++      }
++
++      @Override
++      public void onCreate(@NonNull final SupportSQLiteDatabase db) {
++        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
++        if (_callbacks != null) {
++          for (RoomDatabase.Callback _callback : _callbacks) {
++            _callback.onCreate(db);
++          }
++        }
++      }
++
++      @Override
++      public void onOpen(@NonNull final SupportSQLiteDatabase db) {
++        mDatabase = db;
++        internalInitInvalidationTracker(db);
++        final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
++        if (_callbacks != null) {
++          for (RoomDatabase.Callback _callback : _callbacks) {
++            _callback.onOpen(db);
++          }
++        }
++      }
++
++      @Override
++      public void onPreMigrate(@NonNull final SupportSQLiteDatabase db) {
++        DBUtil.dropFtsSyncTriggers(db);
++      }
++
++      @Override
++      public void onPostMigrate(@NonNull final SupportSQLiteDatabase db) {
++      }
++
++      @Override
++      @NonNull
++      public RoomOpenHelper.ValidationResult onValidateSchema(
++          @NonNull final SupportSQLiteDatabase db) {
++        final HashMap<String, TableInfo.Column> _columnsMilkCollection = new HashMap<String, TableInfo.Column>(9);
++        _columnsMilkCollection.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("date", new TableInfo.Column("date", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("session", new TableInfo.Column("session", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("quantityLitres", new TableInfo.Column("quantityLitres", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("fatPercentage", new TableInfo.Column("fatPercentage", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("pricePerLitre", new TableInfo.Column("pricePerLitre", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("paymentStatus", new TableInfo.Column("paymentStatus", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        _columnsMilkCollection.put("updatedAt", new TableInfo.Column("updatedAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
++        final HashSet<TableInfo.ForeignKey> _foreignKeysMilkCollection = new HashSet<TableInfo.ForeignKey>(0);
++        final HashSet<TableInfo.Index> _indicesMilkCollection = new HashSet<TableInfo.Index>(0);
++        final TableInfo _infoMilkCollection = new TableInfo("milk_collection", _columnsMilkCollection, _foreignKeysMilkCollection, _indicesMilkCollection);
++        final TableInfo _existingMilkCollection = TableInfo.read(db, "milk_collection");
++        if (!_infoMilkCollection.equals(_existingMilkCollection)) {
++          return new RoomOpenHelper.ValidationResult(false, "milk_collection(com.example.farmermilkcollectionapp.data.MilkCollection).\n"
++                  + " Expected:\n" + _infoMilkCollection + "\n"
++                  + " Found:\n" + _existingMilkCollection);
++        }
++        return new RoomOpenHelper.ValidationResult(true, null);
++      }
++    }, "9c72478f12cda3eadb4e943acd618c22", "599a466dc7c8a6bc11c89580976a4228");
++    final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
++    final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
++    return _helper;
++  }
++
++  @Override
++  @NonNull
++  protected InvalidationTracker createInvalidationTracker() {
++    final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
++    final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
++    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "milk_collection");
++  }
++
++  @Override
++  public void clearAllTables() {
++    super.assertNotMainThread();
++    final SupportSQLiteDatabase _db = super.getOpenHelper().getWritableDatabase();
++    try {
++      super.beginTransaction();
++      _db.execSQL("DELETE FROM `milk_collection`");
++      super.setTransactionSuccessful();
++    } finally {
++      super.endTransaction();
++      _db.query("PRAGMA wal_checkpoint(FULL)").close();
++      if (!_db.inTransaction()) {
++        _db.execSQL("VACUUM");
++      }
++    }
++  }
++
++  @Override
++  @NonNull
++  protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
++    final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
++    _typeConvertersMap.put(MilkCollectionDao.class, MilkCollectionDao_Impl.getRequiredConverters());
++    return _typeConvertersMap;
++  }
++
++  @Override
++  @NonNull
++  public Set<Class<? extends AutoMigrationSpec>> getRequiredAutoMigrationSpecs() {
++    final HashSet<Class<? extends AutoMigrationSpec>> _autoMigrationSpecsSet = new HashSet<Class<? extends AutoMigrationSpec>>();
++    return _autoMigrationSpecsSet;
++  }
++
++  @Override
++  @NonNull
++  public List<Migration> getAutoMigrations(
++      @NonNull final Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> autoMigrationSpecs) {
++    final List<Migration> _autoMigrations = new ArrayList<Migration>();
++    return _autoMigrations;
++  }
++
++  @Override
++  public MilkCollectionDao milkCollectionDao() {
++    if (_milkCollectionDao != null) {
++      return _milkCollectionDao;
++    } else {
++      synchronized(this) {
++        if(_milkCollectionDao == null) {
++          _milkCollectionDao = new MilkCollectionDao_Impl(this);
++        }
++        return _milkCollectionDao;
++      }
++    }
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkCollectionDao_Impl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkCollectionDao_Impl.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkCollectionDao_Impl.java
+new file mode 100644
+--- /dev/null	(date 1762136962092)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkCollectionDao_Impl.java	(date 1762136962092)
+@@ -0,0 +1,407 @@
++package com.example.farmermilkcollectionapp.data;
++
++import android.database.Cursor;
++import androidx.annotation.NonNull;
++import androidx.room.CoroutinesRoom;
++import androidx.room.EntityDeletionOrUpdateAdapter;
++import androidx.room.EntityInsertionAdapter;
++import androidx.room.RoomDatabase;
++import androidx.room.RoomSQLiteQuery;
++import androidx.room.SharedSQLiteStatement;
++import androidx.room.util.CursorUtil;
++import androidx.room.util.DBUtil;
++import androidx.sqlite.db.SupportSQLiteStatement;
++import java.lang.Class;
++import java.lang.Exception;
++import java.lang.Object;
++import java.lang.Override;
++import java.lang.String;
++import java.lang.SuppressWarnings;
++import java.util.ArrayList;
++import java.util.Collections;
++import java.util.List;
++import java.util.concurrent.Callable;
++import javax.annotation.processing.Generated;
++import kotlin.Unit;
++import kotlin.coroutines.Continuation;
++import kotlinx.coroutines.flow.Flow;
++
++@Generated("androidx.room.RoomProcessor")
++@SuppressWarnings({"unchecked", "deprecation"})
++public final class MilkCollectionDao_Impl implements MilkCollectionDao {
++  private final RoomDatabase __db;
++
++  private final EntityInsertionAdapter<MilkCollection> __insertionAdapterOfMilkCollection;
++
++  private final EntityDeletionOrUpdateAdapter<MilkCollection> __updateAdapterOfMilkCollection;
++
++  private final SharedSQLiteStatement __preparedStmtOfDeleteById;
++
++  private final SharedSQLiteStatement __preparedStmtOfClearAll;
++
++  public MilkCollectionDao_Impl(@NonNull final RoomDatabase __db) {
++    this.__db = __db;
++    this.__insertionAdapterOfMilkCollection = new EntityInsertionAdapter<MilkCollection>(__db) {
++      @Override
++      @NonNull
++      protected String createQuery() {
++        return "INSERT OR REPLACE INTO `milk_collection` (`id`,`date`,`session`,`quantityLitres`,`fatPercentage`,`pricePerLitre`,`paymentStatus`,`createdAt`,`updatedAt`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?)";
++      }
++
++      @Override
++      protected void bind(@NonNull final SupportSQLiteStatement statement,
++          @NonNull final MilkCollection entity) {
++        statement.bindLong(1, entity.getId());
++        statement.bindLong(2, entity.getDate());
++        if (entity.getSession() == null) {
++          statement.bindNull(3);
++        } else {
++          statement.bindString(3, entity.getSession());
++        }
++        statement.bindDouble(4, entity.getQuantityLitres());
++        statement.bindDouble(5, entity.getFatPercentage());
++        statement.bindDouble(6, entity.getPricePerLitre());
++        if (entity.getPaymentStatus() == null) {
++          statement.bindNull(7);
++        } else {
++          statement.bindString(7, entity.getPaymentStatus());
++        }
++        statement.bindLong(8, entity.getCreatedAt());
++        statement.bindLong(9, entity.getUpdatedAt());
++      }
++    };
++    this.__updateAdapterOfMilkCollection = new EntityDeletionOrUpdateAdapter<MilkCollection>(__db) {
++      @Override
++      @NonNull
++      protected String createQuery() {
++        return "UPDATE OR ABORT `milk_collection` SET `id` = ?,`date` = ?,`session` = ?,`quantityLitres` = ?,`fatPercentage` = ?,`pricePerLitre` = ?,`paymentStatus` = ?,`createdAt` = ?,`updatedAt` = ? WHERE `id` = ?";
++      }
++
++      @Override
++      protected void bind(@NonNull final SupportSQLiteStatement statement,
++          @NonNull final MilkCollection entity) {
++        statement.bindLong(1, entity.getId());
++        statement.bindLong(2, entity.getDate());
++        if (entity.getSession() == null) {
++          statement.bindNull(3);
++        } else {
++          statement.bindString(3, entity.getSession());
++        }
++        statement.bindDouble(4, entity.getQuantityLitres());
++        statement.bindDouble(5, entity.getFatPercentage());
++        statement.bindDouble(6, entity.getPricePerLitre());
++        if (entity.getPaymentStatus() == null) {
++          statement.bindNull(7);
++        } else {
++          statement.bindString(7, entity.getPaymentStatus());
++        }
++        statement.bindLong(8, entity.getCreatedAt());
++        statement.bindLong(9, entity.getUpdatedAt());
++        statement.bindLong(10, entity.getId());
++      }
++    };
++    this.__preparedStmtOfDeleteById = new SharedSQLiteStatement(__db) {
++      @Override
++      @NonNull
++      public String createQuery() {
++        final String _query = "DELETE FROM milk_collection WHERE id = ?";
++        return _query;
++      }
++    };
++    this.__preparedStmtOfClearAll = new SharedSQLiteStatement(__db) {
++      @Override
++      @NonNull
++      public String createQuery() {
++        final String _query = "DELETE FROM milk_collection";
++        return _query;
++      }
++    };
++  }
++
++  @Override
++  public Object insert(final MilkCollection collection,
++      final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        __db.beginTransaction();
++        try {
++          __insertionAdapterOfMilkCollection.insert(collection);
++          __db.setTransactionSuccessful();
++          return Unit.INSTANCE;
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object update(final MilkCollection record, final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        __db.beginTransaction();
++        try {
++          __updateAdapterOfMilkCollection.handle(record);
++          __db.setTransactionSuccessful();
++          return Unit.INSTANCE;
++        } finally {
++          __db.endTransaction();
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object deleteById(final int id, final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteById.acquire();
++        int _argIndex = 1;
++        _stmt.bindLong(_argIndex, id);
++        try {
++          __db.beginTransaction();
++          try {
++            _stmt.executeUpdateDelete();
++            __db.setTransactionSuccessful();
++            return Unit.INSTANCE;
++          } finally {
++            __db.endTransaction();
++          }
++        } finally {
++          __preparedStmtOfDeleteById.release(_stmt);
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Object clearAll(final Continuation<? super Unit> $completion) {
++    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
++      @Override
++      @NonNull
++      public Unit call() throws Exception {
++        final SupportSQLiteStatement _stmt = __preparedStmtOfClearAll.acquire();
++        try {
++          __db.beginTransaction();
++          try {
++            _stmt.executeUpdateDelete();
++            __db.setTransactionSuccessful();
++            return Unit.INSTANCE;
++          } finally {
++            __db.endTransaction();
++          }
++        } finally {
++          __preparedStmtOfClearAll.release(_stmt);
++        }
++      }
++    }, $completion);
++  }
++
++  @Override
++  public Flow<List<MilkCollection>> getAllCollections() {
++    final String _sql = "SELECT * FROM milk_collection ORDER BY date DESC";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
++    return CoroutinesRoom.createFlow(__db, false, new String[] {"milk_collection"}, new Callable<List<MilkCollection>>() {
++      @Override
++      @NonNull
++      public List<MilkCollection> call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++          final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
++          final int _cursorIndexOfSession = CursorUtil.getColumnIndexOrThrow(_cursor, "session");
++          final int _cursorIndexOfQuantityLitres = CursorUtil.getColumnIndexOrThrow(_cursor, "quantityLitres");
++          final int _cursorIndexOfFatPercentage = CursorUtil.getColumnIndexOrThrow(_cursor, "fatPercentage");
++          final int _cursorIndexOfPricePerLitre = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerLitre");
++          final int _cursorIndexOfPaymentStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "paymentStatus");
++          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
++          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
++          final List<MilkCollection> _result = new ArrayList<MilkCollection>(_cursor.getCount());
++          while (_cursor.moveToNext()) {
++            final MilkCollection _item;
++            final long _tmpId;
++            _tmpId = _cursor.getLong(_cursorIndexOfId);
++            final long _tmpDate;
++            _tmpDate = _cursor.getLong(_cursorIndexOfDate);
++            final String _tmpSession;
++            if (_cursor.isNull(_cursorIndexOfSession)) {
++              _tmpSession = null;
++            } else {
++              _tmpSession = _cursor.getString(_cursorIndexOfSession);
++            }
++            final double _tmpQuantityLitres;
++            _tmpQuantityLitres = _cursor.getDouble(_cursorIndexOfQuantityLitres);
++            final double _tmpFatPercentage;
++            _tmpFatPercentage = _cursor.getDouble(_cursorIndexOfFatPercentage);
++            final double _tmpPricePerLitre;
++            _tmpPricePerLitre = _cursor.getDouble(_cursorIndexOfPricePerLitre);
++            final String _tmpPaymentStatus;
++            if (_cursor.isNull(_cursorIndexOfPaymentStatus)) {
++              _tmpPaymentStatus = null;
++            } else {
++              _tmpPaymentStatus = _cursor.getString(_cursorIndexOfPaymentStatus);
++            }
++            final long _tmpCreatedAt;
++            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
++            final long _tmpUpdatedAt;
++            _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
++            _item = new MilkCollection(_tmpId,_tmpDate,_tmpSession,_tmpQuantityLitres,_tmpFatPercentage,_tmpPricePerLitre,_tmpPaymentStatus,_tmpCreatedAt,_tmpUpdatedAt);
++            _result.add(_item);
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++        }
++      }
++
++      @Override
++      protected void finalize() {
++        _statement.release();
++      }
++    });
++  }
++
++  @Override
++  public Flow<List<MilkCollection>> getCollectionsForDay(final long startOfDay,
++      final long endOfDay) {
++    final String _sql = "SELECT * FROM milk_collection WHERE date BETWEEN ? AND ?";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
++    int _argIndex = 1;
++    _statement.bindLong(_argIndex, startOfDay);
++    _argIndex = 2;
++    _statement.bindLong(_argIndex, endOfDay);
++    return CoroutinesRoom.createFlow(__db, false, new String[] {"milk_collection"}, new Callable<List<MilkCollection>>() {
++      @Override
++      @NonNull
++      public List<MilkCollection> call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++          final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
++          final int _cursorIndexOfSession = CursorUtil.getColumnIndexOrThrow(_cursor, "session");
++          final int _cursorIndexOfQuantityLitres = CursorUtil.getColumnIndexOrThrow(_cursor, "quantityLitres");
++          final int _cursorIndexOfFatPercentage = CursorUtil.getColumnIndexOrThrow(_cursor, "fatPercentage");
++          final int _cursorIndexOfPricePerLitre = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerLitre");
++          final int _cursorIndexOfPaymentStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "paymentStatus");
++          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
++          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
++          final List<MilkCollection> _result = new ArrayList<MilkCollection>(_cursor.getCount());
++          while (_cursor.moveToNext()) {
++            final MilkCollection _item;
++            final long _tmpId;
++            _tmpId = _cursor.getLong(_cursorIndexOfId);
++            final long _tmpDate;
++            _tmpDate = _cursor.getLong(_cursorIndexOfDate);
++            final String _tmpSession;
++            if (_cursor.isNull(_cursorIndexOfSession)) {
++              _tmpSession = null;
++            } else {
++              _tmpSession = _cursor.getString(_cursorIndexOfSession);
++            }
++            final double _tmpQuantityLitres;
++            _tmpQuantityLitres = _cursor.getDouble(_cursorIndexOfQuantityLitres);
++            final double _tmpFatPercentage;
++            _tmpFatPercentage = _cursor.getDouble(_cursorIndexOfFatPercentage);
++            final double _tmpPricePerLitre;
++            _tmpPricePerLitre = _cursor.getDouble(_cursorIndexOfPricePerLitre);
++            final String _tmpPaymentStatus;
++            if (_cursor.isNull(_cursorIndexOfPaymentStatus)) {
++              _tmpPaymentStatus = null;
++            } else {
++              _tmpPaymentStatus = _cursor.getString(_cursorIndexOfPaymentStatus);
++            }
++            final long _tmpCreatedAt;
++            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
++            final long _tmpUpdatedAt;
++            _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
++            _item = new MilkCollection(_tmpId,_tmpDate,_tmpSession,_tmpQuantityLitres,_tmpFatPercentage,_tmpPricePerLitre,_tmpPaymentStatus,_tmpCreatedAt,_tmpUpdatedAt);
++            _result.add(_item);
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++        }
++      }
++
++      @Override
++      protected void finalize() {
++        _statement.release();
++      }
++    });
++  }
++
++  @Override
++  public Flow<List<MilkCollection>> getLatestRecords() {
++    final String _sql = "SELECT * FROM milk_collection ORDER BY date DESC LIMIT 10";
++    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
++    return CoroutinesRoom.createFlow(__db, false, new String[] {"milk_collection"}, new Callable<List<MilkCollection>>() {
++      @Override
++      @NonNull
++      public List<MilkCollection> call() throws Exception {
++        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
++        try {
++          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
++          final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
++          final int _cursorIndexOfSession = CursorUtil.getColumnIndexOrThrow(_cursor, "session");
++          final int _cursorIndexOfQuantityLitres = CursorUtil.getColumnIndexOrThrow(_cursor, "quantityLitres");
++          final int _cursorIndexOfFatPercentage = CursorUtil.getColumnIndexOrThrow(_cursor, "fatPercentage");
++          final int _cursorIndexOfPricePerLitre = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerLitre");
++          final int _cursorIndexOfPaymentStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "paymentStatus");
++          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
++          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
++          final List<MilkCollection> _result = new ArrayList<MilkCollection>(_cursor.getCount());
++          while (_cursor.moveToNext()) {
++            final MilkCollection _item;
++            final long _tmpId;
++            _tmpId = _cursor.getLong(_cursorIndexOfId);
++            final long _tmpDate;
++            _tmpDate = _cursor.getLong(_cursorIndexOfDate);
++            final String _tmpSession;
++            if (_cursor.isNull(_cursorIndexOfSession)) {
++              _tmpSession = null;
++            } else {
++              _tmpSession = _cursor.getString(_cursorIndexOfSession);
++            }
++            final double _tmpQuantityLitres;
++            _tmpQuantityLitres = _cursor.getDouble(_cursorIndexOfQuantityLitres);
++            final double _tmpFatPercentage;
++            _tmpFatPercentage = _cursor.getDouble(_cursorIndexOfFatPercentage);
++            final double _tmpPricePerLitre;
++            _tmpPricePerLitre = _cursor.getDouble(_cursorIndexOfPricePerLitre);
++            final String _tmpPaymentStatus;
++            if (_cursor.isNull(_cursorIndexOfPaymentStatus)) {
++              _tmpPaymentStatus = null;
++            } else {
++              _tmpPaymentStatus = _cursor.getString(_cursorIndexOfPaymentStatus);
++            }
++            final long _tmpCreatedAt;
++            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
++            final long _tmpUpdatedAt;
++            _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
++            _item = new MilkCollection(_tmpId,_tmpDate,_tmpSession,_tmpQuantityLitres,_tmpFatPercentage,_tmpPricePerLitre,_tmpPaymentStatus,_tmpCreatedAt,_tmpUpdatedAt);
++            _result.add(_item);
++          }
++          return _result;
++        } finally {
++          _cursor.close();
++        }
++      }
++
++      @Override
++      protected void finalize() {
++        _statement.release();
++      }
++    });
++  }
++
++  @NonNull
++  public static List<Class<?>> getRequiredConverters() {
++    return Collections.emptyList();
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkRepository_Factory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkRepository_Factory.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkRepository_Factory.java
+new file mode 100644
+--- /dev/null	(date 1762136962835)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/data/MilkRepository_Factory.java	(date 1762136962835)
+@@ -0,0 +1,44 @@
++package com.example.farmermilkcollectionapp.data;
++
++import dagger.internal.DaggerGenerated;
++import dagger.internal.Factory;
++import dagger.internal.QualifierMetadata;
++import dagger.internal.ScopeMetadata;
++import javax.annotation.processing.Generated;
++import javax.inject.Provider;
++
++@ScopeMetadata("javax.inject.Singleton")
++@QualifierMetadata
++@DaggerGenerated
++@Generated(
++    value = "dagger.internal.codegen.ComponentProcessor",
++    comments = "https://dagger.dev"
++)
++@SuppressWarnings({
++    "unchecked",
++    "rawtypes",
++    "KotlinInternal",
++    "KotlinInternalInJava",
++    "cast",
++    "deprecation"
++})
++public final class MilkRepository_Factory implements Factory<MilkRepository> {
++  private final Provider<MilkCollectionDao> daoProvider;
++
++  public MilkRepository_Factory(Provider<MilkCollectionDao> daoProvider) {
++    this.daoProvider = daoProvider;
++  }
++
++  @Override
++  public MilkRepository get() {
++    return newInstance(daoProvider.get());
++  }
++
++  public static MilkRepository_Factory create(Provider<MilkCollectionDao> daoProvider) {
++    return new MilkRepository_Factory(daoProvider);
++  }
++
++  public static MilkRepository newInstance(MilkCollectionDao dao) {
++    return new MilkRepository(dao);
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/Hilt_MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/Hilt_MainActivity.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/Hilt_MainActivity.java
+new file mode 100644
+--- /dev/null	(date 1762136962508)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/Hilt_MainActivity.java	(date 1762136962508)
+@@ -0,0 +1,108 @@
++package com.example.farmermilkcollectionapp;
++
++import android.content.Context;
++import android.os.Bundle;
++import androidx.activity.ComponentActivity;
++import androidx.activity.contextaware.OnContextAvailableListener;
++import androidx.annotation.CallSuper;
++import androidx.annotation.Nullable;
++import androidx.lifecycle.ViewModelProvider;
++import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
++import dagger.hilt.android.internal.managers.ActivityComponentManager;
++import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
++import dagger.hilt.internal.GeneratedComponentManager;
++import dagger.hilt.internal.GeneratedComponentManagerHolder;
++import dagger.hilt.internal.UnsafeCasts;
++import java.lang.Object;
++import java.lang.Override;
++import javax.annotation.processing.Generated;
++
++/**
++ * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
++ */
++@Generated("dagger.hilt.android.processor.internal.androidentrypoint.ActivityGenerator")
++public abstract class Hilt_MainActivity extends ComponentActivity implements GeneratedComponentManagerHolder {
++  private SavedStateHandleHolder savedStateHandleHolder;
++
++  private volatile ActivityComponentManager componentManager;
++
++  private final Object componentManagerLock = new Object();
++
++  private boolean injected = false;
++
++  Hilt_MainActivity() {
++    super();
++    _initHiltInternal();
++  }
++
++  Hilt_MainActivity(int contentLayoutId) {
++    super(contentLayoutId);
++    _initHiltInternal();
++  }
++
++  private void _initHiltInternal() {
++    addOnContextAvailableListener(new OnContextAvailableListener() {
++      @Override
++      public void onContextAvailable(Context context) {
++        inject();
++      }
++    });
++  }
++
++  private void initSavedStateHandleHolder() {
++    if (getApplication() instanceof GeneratedComponentManager) {
++      savedStateHandleHolder = componentManager().getSavedStateHandleHolder();
++      if (savedStateHandleHolder.isInvalid()) {
++        savedStateHandleHolder.setExtras(getDefaultViewModelCreationExtras());
++      }
++    }
++  }
++
++  @CallSuper
++  @Override
++  protected void onCreate(@Nullable Bundle savedInstanceState) {
++    super.onCreate(savedInstanceState);
++    initSavedStateHandleHolder();
++  }
++
++  @Override
++  protected void onDestroy() {
++    super.onDestroy();
++    if (savedStateHandleHolder != null) {
++      savedStateHandleHolder.clear();
++    }
++  }
++
++  @Override
++  public final Object generatedComponent() {
++    return this.componentManager().generatedComponent();
++  }
++
++  protected ActivityComponentManager createComponentManager() {
++    return new ActivityComponentManager(this);
++  }
++
++  @Override
++  public final ActivityComponentManager componentManager() {
++    if (componentManager == null) {
++      synchronized (componentManagerLock) {
++        if (componentManager == null) {
++          componentManager = createComponentManager();
++        }
++      }
++    }
++    return componentManager;
++  }
++
++  protected void inject() {
++    if (!injected) {
++      injected = true;
++      ((MainActivity_GeneratedInjector) this.generatedComponent()).injectMainActivity(UnsafeCasts.<MainActivity>unsafeCast(this));
++    }
++  }
++
++  @Override
++  public ViewModelProvider.Factory getDefaultViewModelProviderFactory() {
++    return DefaultViewModelFactories.getActivityFactory(this, super.getDefaultViewModelProviderFactory());
++  }
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/FarmerApp_GeneratedInjector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/FarmerApp_GeneratedInjector.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/FarmerApp_GeneratedInjector.java
+new file mode 100644
+--- /dev/null	(date 1762136962512)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/FarmerApp_GeneratedInjector.java	(date 1762136962512)
+@@ -0,0 +1,17 @@
++package com.example.farmermilkcollectionapp;
++
++import dagger.hilt.InstallIn;
++import dagger.hilt.codegen.OriginatingElement;
++import dagger.hilt.components.SingletonComponent;
++import dagger.hilt.internal.GeneratedEntryPoint;
++import javax.annotation.processing.Generated;
++
++@OriginatingElement(
++    topLevelClass = FarmerApp.class
++)
++@GeneratedEntryPoint
++@InstallIn(SingletonComponent.class)
++@Generated("dagger.hilt.android.processor.internal.androidentrypoint.InjectorEntryPointGenerator")
++public interface FarmerApp_GeneratedInjector {
++  void injectFarmerApp(FarmerApp farmerApp);
++}
+Index: app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/MainActivity_GeneratedInjector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/MainActivity_GeneratedInjector.java b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/MainActivity_GeneratedInjector.java
+new file mode 100644
+--- /dev/null	(date 1762136962390)
++++ b/app/build/generated/source/kapt/debug/com/example/farmermilkcollectionapp/MainActivity_GeneratedInjector.java	(date 1762136962390)
+@@ -0,0 +1,17 @@
++package com.example.farmermilkcollectionapp;
++
++import dagger.hilt.InstallIn;
++import dagger.hilt.android.components.ActivityComponent;
++import dagger.hilt.codegen.OriginatingElement;
++import dagger.hilt.internal.GeneratedEntryPoint;
++import javax.annotation.processing.Generated;
++
++@OriginatingElement(
++    topLevelClass = MainActivity.class
++)
++@GeneratedEntryPoint
++@InstallIn(ActivityComponent.class)
++@Generated("dagger.hilt.android.processor.internal.androidentrypoint.InjectorEntryPointGenerator")
++public interface MainActivity_GeneratedInjector {
++  void injectMainActivity(MainActivity mainActivity);
++}
+Index: app/build/generated/source/kapt/debug/dagger/hilt/internal/aggregatedroot/codegen/_com_example_farmermilkcollectionapp_FarmerApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/dagger/hilt/internal/aggregatedroot/codegen/_com_example_farmermilkcollectionapp_FarmerApp.java b/app/build/generated/source/kapt/debug/dagger/hilt/internal/aggregatedroot/codegen/_com_example_farmermilkcollectionapp_FarmerApp.java
+new file mode 100644
+--- /dev/null	(date 1762136962169)
++++ b/app/build/generated/source/kapt/debug/dagger/hilt/internal/aggregatedroot/codegen/_com_example_farmermilkcollectionapp_FarmerApp.java	(date 1762136962169)
+@@ -0,0 +1,21 @@
++package dagger.hilt.internal.aggregatedroot.codegen;
++
++import dagger.hilt.android.HiltAndroidApp;
++import dagger.hilt.internal.aggregatedroot.AggregatedRoot;
++import javax.annotation.processing.Generated;
++
++/**
++ * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
++ */
++@AggregatedRoot(
++    root = "com.example.farmermilkcollectionapp.FarmerApp",
++    rootPackage = "com.example.farmermilkcollectionapp",
++    originatingRoot = "com.example.farmermilkcollectionapp.FarmerApp",
++    originatingRootPackage = "com.example.farmermilkcollectionapp",
++    rootAnnotation = HiltAndroidApp.class,
++    rootSimpleNames = "FarmerApp",
++    originatingRootSimpleNames = "FarmerApp"
++)
++@Generated("dagger.hilt.processor.internal.root.AggregatedRootGenerator")
++public class _com_example_farmermilkcollectionapp_FarmerApp {
++}
+Index: app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_di_DatabaseModule.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_di_DatabaseModule.java b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_di_DatabaseModule.java
+new file mode 100644
+--- /dev/null	(date 1762136962532)
++++ b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_di_DatabaseModule.java	(date 1762136962532)
+@@ -0,0 +1,15 @@
++package hilt_aggregated_deps;
++
++import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
++import javax.annotation.processing.Generated;
++
++/**
++ * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
++ */
++@AggregatedDeps(
++    components = "dagger.hilt.components.SingletonComponent",
++    modules = "com.example.farmermilkcollectionapp.di.DatabaseModule"
++)
++@Generated("dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsGenerator")
++public class _com_example_farmermilkcollectionapp_di_DatabaseModule {
++}
+Index: app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_FarmerApp_GeneratedInjector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_FarmerApp_GeneratedInjector.java b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_FarmerApp_GeneratedInjector.java
+new file mode 100644
+--- /dev/null	(date 1762136962952)
++++ b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_FarmerApp_GeneratedInjector.java	(date 1762136962952)
+@@ -0,0 +1,15 @@
++package hilt_aggregated_deps;
++
++import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
++import javax.annotation.processing.Generated;
++
++/**
++ * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
++ */
++@AggregatedDeps(
++    components = "dagger.hilt.components.SingletonComponent",
++    entryPoints = "com.example.farmermilkcollectionapp.FarmerApp_GeneratedInjector"
++)
++@Generated("dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsGenerator")
++public class _com_example_farmermilkcollectionapp_FarmerApp_GeneratedInjector {
++}
+Index: app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_MainActivity_GeneratedInjector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_MainActivity_GeneratedInjector.java b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_MainActivity_GeneratedInjector.java
+new file mode 100644
+--- /dev/null	(date 1762136962949)
++++ b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_MainActivity_GeneratedInjector.java	(date 1762136962949)
+@@ -0,0 +1,15 @@
++package hilt_aggregated_deps;
++
++import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
++import javax.annotation.processing.Generated;
++
++/**
++ * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
++ */
++@AggregatedDeps(
++    components = "dagger.hilt.android.components.ActivityComponent",
++    entryPoints = "com.example.farmermilkcollectionapp.MainActivity_GeneratedInjector"
++)
++@Generated("dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsGenerator")
++public class _com_example_farmermilkcollectionapp_MainActivity_GeneratedInjector {
++}
+Index: app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_KeyModule.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_KeyModule.java b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_KeyModule.java
+new file mode 100644
+--- /dev/null	(date 1762136962946)
++++ b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_KeyModule.java	(date 1762136962946)
+@@ -0,0 +1,15 @@
++package hilt_aggregated_deps;
++
++import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
++import javax.annotation.processing.Generated;
++
++/**
++ * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
++ */
++@AggregatedDeps(
++    components = "dagger.hilt.android.components.ActivityRetainedComponent",
++    modules = "com.example.farmermilkcollectionapp.ui.MilkViewModel_HiltModules.KeyModule"
++)
++@Generated("dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsGenerator")
++public class _com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_KeyModule {
++}
+Index: app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_BindsModule.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_BindsModule.java b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_BindsModule.java
+new file mode 100644
+--- /dev/null	(date 1762136962944)
++++ b/app/build/generated/source/kapt/debug/hilt_aggregated_deps/_com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_BindsModule.java	(date 1762136962944)
+@@ -0,0 +1,15 @@
++package hilt_aggregated_deps;
++
++import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
++import javax.annotation.processing.Generated;
++
++/**
++ * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
++ */
++@AggregatedDeps(
++    components = "dagger.hilt.android.components.ViewModelComponent",
++    modules = "com.example.farmermilkcollectionapp.ui.MilkViewModel_HiltModules.BindsModule"
++)
++@Generated("dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsGenerator")
++public class _com_example_farmermilkcollectionapp_ui_MilkViewModel_HiltModules_BindsModule {
++}
